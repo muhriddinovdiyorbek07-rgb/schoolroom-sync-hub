@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { SiteHeader } from "@/components/SiteHeader";
 import { useProfile, useSessionUser } from "@/lib/session";
+import { Flame, Medal, Target } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
