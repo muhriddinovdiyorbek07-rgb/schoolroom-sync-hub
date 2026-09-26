@@ -143,13 +143,25 @@ function Index() {
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {[
-            ["📚", "Raqamli darsliklar", "Har sinf uchun rasmiy darsliklar va video darslar."],
-            ["🧪", "Interaktiv testlar", "Nazorat ishlari va darhol natija — bilimingizni kuzating."],
-            ["📊", "Baho tizimi", "O'qituvchi va ota-onalar uchun shaffof reyting va hisobotlar."],
-          ].map(([icon, title, text]) => (
+            {
+              Icon: BookOpen,
+              title: "Raqamli darsliklar",
+              text: "Har sinf uchun rasmiy darsliklar va video darslar.",
+            },
+            {
+              Icon: FlaskConical,
+              title: "Interaktiv testlar",
+              text: "Nazorat ishlari va darhol natija — bilimingizni kuzating.",
+            },
+            {
+              Icon: BarChart3,
+              title: "Baho tizimi",
+              text: "O'qituvchi va ota-onalar uchun shaffof reyting va hisobotlar.",
+            },
+          ].map(({ Icon, title, text }) => (
             <div key={title} className="glass-panel rounded-3xl p-7">
-              <div className="grid size-12 place-items-center rounded-2xl bg-primary/15 text-2xl">
-                {icon}
+              <div className="grid size-12 place-items-center rounded-2xl bg-primary/15 text-primary">
+                <Icon className="size-6" />
               </div>
               <h3 className="mt-4 text-xl font-bold">{title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{text}</p>
