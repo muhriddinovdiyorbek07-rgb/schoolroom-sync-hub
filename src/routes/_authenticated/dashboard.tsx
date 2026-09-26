@@ -99,7 +99,7 @@ function Dashboard() {
             O'quvchi paneli
           </div>
           <h1 className="mt-1 text-3xl font-bold tracking-tight">
-            Salom, {profile?.full_name || "o'quvchi"} 👋
+            Salom, {profile?.full_name || "o'quvchi"}
           </h1>
         </div>
 
@@ -233,13 +233,13 @@ function Dashboard() {
                   <div className="font-bold">Yutuqlar</div>
                   <div className="mt-3 flex gap-3">
                     {[
-                      ["🏅", "100 kun"],
-                      ["🔥", "Seriyali"],
-                      ["🎯", "Top 5%"],
-                    ].map(([icon, label]) => (
+                      { Icon: Medal, label: "100 kun" },
+                      { Icon: Flame, label: "Seriyali" },
+                      { Icon: Target, label: "Top 5%" },
+                    ].map(({ Icon, label }) => (
                       <div key={label} className="text-center">
-                        <div className="grid size-11 place-items-center rounded-full bg-secondary text-xl">
-                          {icon}
+                        <div className="grid size-11 place-items-center rounded-full bg-secondary text-accent">
+                          <Icon className="size-5" />
                         </div>
                         <div className="mt-1 text-[10px] font-semibold text-muted-foreground">
                           {label}
