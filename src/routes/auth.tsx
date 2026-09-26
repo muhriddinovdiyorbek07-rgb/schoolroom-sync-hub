@@ -7,9 +7,8 @@ import { AmbientBackground } from "@/components/AmbientBackground";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
-  validateSearch: (search: Record<string, unknown>) => ({
-    mode: search['mode'] === "signup" ? ("signup" as const) : ("login" as const),
-  }),
+  validateSearch: (search: Record<string, unknown>): { mode?: "signup" | "login" } =>
+    search['mode'] === "signup" ? { mode: "signup" } : {},
   head: () => ({
     meta: [
       { title: "Kirish va ro'yxatdan o'tish — Bilim.uz" },

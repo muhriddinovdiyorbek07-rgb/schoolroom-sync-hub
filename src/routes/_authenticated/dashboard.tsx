@@ -29,7 +29,8 @@ function useList<T>(key: string, table: string, column?: string, value?: string 
     queryKey: [key, value ?? null],
     enabled: column ? Boolean(value) : true,
     queryFn: async () => {
-      let q = supabase.from(table).select("*");
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let q: any = (supabase.from as any)(table).select("*");
       if (column && value) q = q.eq(column, value);
       const { data, error } = await q;
       if (error) throw error;
