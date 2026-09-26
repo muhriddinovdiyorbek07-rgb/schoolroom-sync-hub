@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BarChart3, BookOpen, FlaskConical } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,7 +122,7 @@ function Index() {
                 Davom etish →
               </Link>
             </div>
-            <div className="a-drift glass-panel absolute -bottom-6 -left-6 w-52 rounded-2xl p-4">
+            <div className="a-drift glass-panel absolute -bottom-14 left-2 hidden w-52 rounded-2xl p-4 lg:block">
               <div className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                 Bugungi test
               </div>
